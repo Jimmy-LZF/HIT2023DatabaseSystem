@@ -1,0 +1,16 @@
+sqlcmd /S localhost /U root /P toor /d university -i "university.sql"
+for %f in (class.sql college.sql course.sql department.sql dormitory.sql labotary.sql score.sql student.sql teacher.sql) do sqlcmd /S localhost /U root /P toor /d university -i "%f"
+
+
+source ./university.sql;
+source ./class.sql;
+source ./college.sql;
+source ./course.sql;
+source ./department.sql;
+source ./dormitory.sql;
+source ./labotary.sql;
+source ./score.sql;
+source ./student.sql;
+source ./teacher.sql;
+
+mysql -u root -p university --default-character-set=utf8mb4 < runme.sql 
